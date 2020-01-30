@@ -1,9 +1,12 @@
 <%= @thread.title %>
 <%= @thread.body %>
+<% @responses.each do |response| %>
+  <p><%= response.comment %><%= response.user.uid %></p>
+<% end %>
 
-<%= form_with model: @thread do |f| %>
+<%= form_with(model: [@thread, @comment], local: true) do |f| %>
   <div>
-    <%= f.text_area :body %>
+    <%= f.text_area :comment %>
     
     <%= f.submit '登録'%>
   </div>
