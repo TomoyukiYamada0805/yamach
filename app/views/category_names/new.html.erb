@@ -1,0 +1,7 @@
+<%= form_with model: @category_name  do |f| %>
+  <div>
+    <%= f.text_field :name, placeholder: 'カテゴリー名'%>
+    
+    <%= f.submit '登録'%>
+  </div>
+<% end %>

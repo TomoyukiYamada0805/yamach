@@ -1,1 +1,7 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+<% @categories.each do |category| %>
+    <%= link_to categories_show_path(id: category.category_name.uid) do %>
+      <p><%= category.category_name.name %></p>
+    <% end %>
+<% end %>

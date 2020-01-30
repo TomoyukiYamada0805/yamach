@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   root 'tops#index'
   get 'categories/index'
+  get '/:id' => 'categories#show', as: :categories_show
+  resources :category_names
   devise_for :users
   resources :thread_lists do
     resources :responses
