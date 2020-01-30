@@ -4,7 +4,7 @@ class ThreadListsController < ApplicationController
     end
   
     def show
-      @thread = ThreadList.find_by(uuid: params[:id])
+      @thread = ThreadList.find_by(uid: params[:id])
     end
   
     def new
@@ -21,7 +21,7 @@ class ThreadListsController < ApplicationController
     private
   
       def thread_params
-        params.require(:thread_list).permit(:uuid, :title, :body, { :category_name_ids => []})
+        params.require(:thread_list).permit(:uid, :title, :body, { :category_name_ids => []})
       end
   end
   
