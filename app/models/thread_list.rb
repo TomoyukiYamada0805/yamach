@@ -1,0 +1,2 @@
+class ThreadList < ApplicationRecord
+end
