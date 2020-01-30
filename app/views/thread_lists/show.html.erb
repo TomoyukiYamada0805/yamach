@@ -1,2 +1,10 @@
 <%= @thread.title %>
 <%= @thread.body %>
+
+<%= form_with model: @thread do |f| %>
+  <div>
+    <%= f.text_area :body %>
+    
+    <%= f.submit '登録'%>
+  </div>
+<% end %>

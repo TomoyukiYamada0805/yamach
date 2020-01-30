@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_30_060042) do
+ActiveRecord::Schema.define(version: 2020_01_30_070933) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "thread_list_id", null: false
@@ -29,7 +29,7 @@ ActiveRecord::Schema.define(version: 2020_01_30_060042) do
   create_table "responses", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "thread_list_id", null: false
     t.bigint "user_id", null: false
-    t.string "body", null: false
+    t.string "comment", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["thread_list_id"], name: "index_responses_on_thread_list_id"

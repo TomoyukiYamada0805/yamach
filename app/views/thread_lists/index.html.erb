@@ -1,6 +1,8 @@
 <% @thread_list.each do |thread| %>
   <div>
-  <%= thread.title %>
-  <%= thread.body %>
+    <%= link_to thread_list_path(id: thread.uid) do %>
+      <%= thread.title %>
+      <%= thread.body %>
+    <% end %>
   </div>
 <% end %>
