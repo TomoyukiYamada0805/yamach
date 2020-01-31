@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'rspec-rails', '~> 3.9'
   gem 'rubocop', '~> 0.79.0'
+  gem 'bullet', '~> 6.1'
 end
 
 group :development do

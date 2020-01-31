@@ -1,6 +1,6 @@
 class TopsController < ApplicationController
   def index
-    @categories = Category.left_outer_joins(:category_name)
+    @categories = Category.includes([:category_name])
     @q = ThreadList.left_outer_joins(:category_name).left_outer_joins(:response).ransack(params[:q])
     @thread_lists = @q.result(distinct: true)
   end

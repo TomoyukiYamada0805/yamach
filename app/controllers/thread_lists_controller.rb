@@ -8,7 +8,7 @@ class ThreadListsController < ApplicationController
     def show
       @thread  = ThreadList.find_by(uid: params[:id])
       @comment = @thread.response.build
-      @responses = Response.where(thread_list_id: @thread.id).left_outer_joins(:user)
+      @responses = Response.includes([:user]).where(thread_list_id: @thread.id)
     end
   
     def new
