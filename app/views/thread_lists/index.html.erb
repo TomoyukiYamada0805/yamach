@@ -1,3 +1,4 @@
+<% breadcrumb :thread_list %>
 <% @thread_list.each do |thread| %>
   <div>
     <%= link_to thread_list_path(id: thread.uid) do %>

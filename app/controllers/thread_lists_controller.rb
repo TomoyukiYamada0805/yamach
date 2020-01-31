@@ -1,4 +1,6 @@
 class ThreadListsController < ApplicationController
+    before_action :authenticate_user!, only: [:new, :create]
+
     def index
       @thread_list = ThreadList.all
     end

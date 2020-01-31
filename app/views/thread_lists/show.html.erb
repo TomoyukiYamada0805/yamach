@@ -9,10 +9,14 @@
   <p><%= response.comment %><%= response.user.uid %></p>
 <% end %>
 
-<%= form_with(model: [@thread, @comment], local: true) do |f| %>
-  <div>
-    <%= f.text_area :comment %>
-    
-    <%= f.submit '登録'%>
-  </div>
+<% if user_signed_in?%>
+  <%= form_with(model: [@thread, @comment], local: true) do |f| %>
+    <div>
+      <%= f.text_area :comment %>
+      
+      <%= f.submit '登録'%>
+    </div>
+  <% end %>
+<% else %>
+  <p>ログイン後コメントすることができます</p>
 <% end %>

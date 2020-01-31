@@ -4,6 +4,9 @@ class ThreadList < ApplicationRecord
     accepts_nested_attributes_for :category
     has_many :response
 
+    validates :title, presence: true, length: { maximum: 100 }
+    validates :body, presence: true, length: { maximum: 1000 }
+
     before_create :generate_token
 
     def generate_token

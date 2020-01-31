@@ -1,4 +1,6 @@
 class CategoryNamesController < ApplicationController
+    before_action :administer?
+
     def new
       @category_name = CategoryName.new
     end
@@ -13,5 +15,9 @@ class CategoryNamesController < ApplicationController
   
       def category_name_params
         params.require(:category_name).permit(:name)
+      end
+
+      def administer?
+        redirect_to root_path if current_user.authority != 1
       end
 end
