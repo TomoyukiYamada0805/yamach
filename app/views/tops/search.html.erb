@@ -1,8 +1,12 @@
+<%= link_to "戻る", :back %>
+
 <%= search_form_for(@q, url:search_path) do |f| %>
-    <%= f.search_field :title_cont %>
-    <%= f.submit '検索'%>
+  <%= f.search_field :title_cont %>
+  <%= f.submit '検索'%>
 <% end %>
 
 <% @thread_lists.each do |thread| %>
-    <%= thread.title %>
+  <%= link_to thread_list_path(id: thread.uid) do %>
+    <p><%= thread.title%><p>
+  <% end %>
 <% end %>

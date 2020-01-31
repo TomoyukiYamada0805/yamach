@@ -1,12 +1,13 @@
-<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-
 <%= search_form_for(@q, url:search_path) do |f| %>
-    <%= f.search_field :title_or_body_or_response_comment_cont %>
-    <%= f.submit '検索'%>
+  <%= f.search_field :title_or_body_or_response_comment_cont %>
+  <%= f.submit '検索'%>
 <% end %>
 
+<div>
+  <p>カテゴリ一覧</p>
+</div>
+<div>
 <% @categories.each do |category| %>
-    <%= link_to categories_show_path(id: category.category_name.uid) do %>
-      <p><%= category.category_name.name %></p>
-    <% end %>
+    <p><%= link_to category.category_name.name , categories_show_path(id: category.category_name.uid) %></p>
 <% end %>
+</div>

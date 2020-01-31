@@ -1,5 +1,10 @@
-<%= @thread.title %>
-<%= @thread.body %>
+<%= link_to "戻る", :back %>
+<div>
+  <p><%= @thread.title %></p>
+</div>
+<div>
+  <p><%= @thread.body %></p>
+</div>
 <% @responses.each do |response| %>
   <p><%= response.comment %><%= response.user.uid %></p>
 <% end %>

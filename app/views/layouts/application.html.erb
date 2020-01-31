@@ -10,6 +10,26 @@
   </head>
 
   <body>
-    <%= yield %>
+    <header id="site-header">
+      <div class="site-header-content">
+        <a class="top_link" href="/">
+        <h1 class="site-title">ちゃんねる</h1>
+        </a>
+        <div class="header-button">
+          <% if user_signed_in? %>
+            <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign in", new_user_session_path, class: 'post signin' %>
+            <!-- ログイン画面に移行する -->
+            <%= link_to "Sign up", new_user_registration_path, class: 'post' %>
+            <!-- 新規登録画面に移行する -->
+          <% end %>
+        </div>
+      </div>
+    </header>
+    
+    <div id="content">
+      <%= yield %>
+    </div>
   </body>
 </html>
