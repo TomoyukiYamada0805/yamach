@@ -32,6 +32,8 @@ gem 'ransack', '~> 2.3', '>= 2.3.2'
 gem 'devise-i18n'
 gem 'devise-i18n-views'
 gem 'gretel', '~> 3.0', '>= 3.0.9'
+gem 'rubocop', '~> 0.79.0'
+gem 'rubocop-rails', '~> 2.4', '>= 2.4.2'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

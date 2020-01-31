@@ -1,8 +1,8 @@
 class ThreadList < ApplicationRecord
-    has_many :category
+    has_many :category, dependent: :destroy
     has_many :category_name, through: :category
     accepts_nested_attributes_for :category
-    has_many :response
+    has_many :response, dependent: :destroy
 
     validates :title, presence: true, length: { maximum: 100 }
     validates :body, presence: true, length: { maximum: 1000 }

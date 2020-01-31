@@ -4,7 +4,7 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  has_many :responses
+  has_many :responses, dependent: :destroy
 
   before_create :generate_token
 
