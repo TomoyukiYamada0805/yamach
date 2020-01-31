@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   resources :thread_lists do
     resources :responses
   end
+  get '*path', controller: 'application', action: 'render_404'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
