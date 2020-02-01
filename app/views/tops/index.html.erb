@@ -1,13 +1,19 @@
-<%= search_form_for(@q, url:search_path) do |f| %>
-  <%= f.search_field :title_or_body_or_response_comment_cont %>
-  <%= f.submit '検索'%>
-<% end %>
+<%= render 'search_form' %>
 
-<div>
-  <p>カテゴリ一覧</p>
+<%= render 'shared/thread_list_container' %> 
+
+<div class='see_more_container'>
+  <div class='see_more_container__item'>
+    <%= link_to 'もっと見る', thread_lists_path %>
+  </div>
 </div>
-<div>
-<% @categories.each do |category| %>
-    <p><%= link_to category.category_name.name , categories_show_path(id: category.category_name.uid) %></p>
-<% end %>
+
+<div class='category_container'>
+  <div class='category_container__category_item'>
+    <p class='category_label'>カテゴリ一覧</p>
+    
+    <% @categories.each do |category| %>
+      <p class='category_container__category_item_label'><%= link_to category.category_name.name , categories_show_path(id: category.category_name.uid) %></p>
+    <% end %>
+  </div>
 </div>

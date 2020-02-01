@@ -2,7 +2,7 @@ class ThreadListsController < ApplicationController
     before_action :authenticate_user!, only: [:new, :create]
 
     def index
-      @thread_list = ThreadList.all
+      @thread_lists = ThreadList.all
     end
   
     def show

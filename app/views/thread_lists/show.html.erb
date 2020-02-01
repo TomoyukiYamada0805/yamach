@@ -1,22 +1,37 @@
-<%= link_to "戻る", :back %>
-<div>
-  <p><%= @thread.title %></p>
+<div class='thread_list_container'>
+  <%= link_to "戻る", :back %>
 </div>
-<div>
-  <p><%= @thread.body %></p>
-</div>
-<% @responses.each do |response| %>
-  <p><%= response.comment %><%= response.user.uid %></p>
-<% end %>
 
-<% if user_signed_in?%>
-  <%= form_with(model: [@thread, @comment], local: true) do |f| %>
-    <div>
-      <%= f.text_area :comment %>
-      
-      <%= f.submit '登録'%>
+<div class='thread_list_container'>
+  <div class='thread_list_container__item thread_info'>
+    <p class='thread_list_container__item_title'><%= @thread.title %></p>
+    <p class='thread_list_container__item_body'><%= @thread.body %></p>
+  </div>
+</div>
+
+<% @responses.each do |response| %>
+  <div class='thread_list_container'>
+    <div class='thread_list_container__item thread_reply'>
+      <p><%= response.user.username %></p>
+      <p><%= response.comment %></p>
+      <p>ID: <%= response.user.uid %></p>
     </div>
-  <% end %>
-<% else %>
-  <p>ログイン後コメントすることができます</p>
+  </div>
 <% end %>
+  
+<div class='thread_list_container'>
+  <div class='thread_list_container__item'>
+    <% if user_signed_in?%>
+      <%= form_with(model: [@thread, @comment], local: true) do |f| %>
+        <div>
+          <%= f.text_area :comment, class: 'thread_comment_area' %>
+        </div>
+        <div class='thread_comment_submit_button_area'>
+          <%= f.submit '登録'%>
+        </div>
+      <% end %>
+    <% else %>
+      <p>ログイン後コメントすることができます</p>
+    <% end %>
+  </div>
+</div>

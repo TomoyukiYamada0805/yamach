@@ -1,7 +1,3 @@
 <%= link_to "戻る", root_path %>
 
-<% @threads.thread_list.each do |thread| %>
-  <%= link_to thread_list_path(id: thread.uid) do %>
-    <p><%= thread.title%><p>
-  <% end %>
-<% end %>
+<%= render 'shared/thread_list_container' %>

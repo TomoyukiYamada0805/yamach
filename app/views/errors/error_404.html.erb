@@ -1,3 +1,13 @@
-<%= image_tag '404.png' %>
-<p>お探しのページは見つかりません。</p>
-<p>404: Not Found</p>
+<div class='error_container'>
+  <div class='error_container__image_area'>
+  <%= image_tag '404.png', class: 'apology_image' %>
+  </div>
+</div>
+
+<div class='error_container'>
+  <div class='error_container__error_messages'>
+    <p>お探しのページは見つかりません。</p>
+    <p>404: Not Found</p>
+    <%= link_to 'トップへ戻る', root_path %>
+  </div>
+</div>

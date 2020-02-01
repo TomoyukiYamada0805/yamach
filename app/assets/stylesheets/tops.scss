@@ -1,3 +1,37 @@
 // Place all the styles related to the tops controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+
+.see_more_container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 15px;
+
+    .see_more_container__item {
+        width: 60%;
+        text-align: right;
+    }
+}
+
+.category_container {
+  display: flex;
+  justify-content: center;
+
+  .category_container__category_item {
+      width: 60%;
+      display: flex;
+      flex-wrap: wrap;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin-bottom: 15px;
+
+      .category_label {
+          width: 100%;
+          margin: 5px 0;
+      }
+
+      .category_container__category_item_label {
+          margin: 0 10px 0 15px;
+      }
+  }
+}

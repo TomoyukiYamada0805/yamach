@@ -1,0 +1,15 @@
+<% @thread_lists.each do |thread| %>
+  <div class='thread_container' >
+    <div class='thread_container__thread_item'>
+      <%= link_to thread_list_path(id: thread.uid) do %>
+      <p class='thread_container__thread_item_title'>
+        <%= thread.title %>
+      </p>
+    
+      <p class='thread_container__thread_item_category'>
+        <%= thread.category_name.first.name %>
+      </p>
+      <% end %>
+    </div>
+  </div>
+<% end %>

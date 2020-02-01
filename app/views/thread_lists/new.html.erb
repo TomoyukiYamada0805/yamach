@@ -1,16 +1,38 @@
-<%= form_with model: @thread_list do |f| %>
-  <div>
-    <%= f.text_field :title, placeholder: 'タイトル'%>
-    <%= f.text_area :body %>
+<div class='thread_list_container'>
+  <div class='thread_list_container__item'>
+    <h2>スレッドを立てる</h2>
+  </div>
+</div>
 
-    <%= f.label :category, 'カテゴリ' %>
-    <%= f.collection_check_boxes(:category_name_ids, CategoryName.all, :id, :name) do |category| %> 
-      <%= category.label do %>
-        <%= category.check_box %>
-        <%= category.text %>
+<%= form_with model: @thread_list do |f| %>
+  <div class='thread_list_container'>
+    <div class='thread_list_container__item'>
+      <%= f.text_field :title, placeholder: 'タイトル', class: 'title_submit_area'%>
+    </div>
+  </div>
+
+  <div class='thread_list_container'>
+    <div class='thread_list_container__item'>
+      <%= f.text_area :body, class: 'body_submit_area' %>
+    </div>
+  </div>
+
+  <div class='category_container'>
+    <div class='category_container__category_item'>
+      <%= f.label :category, 'カテゴリ', class: 'category_label' %>
+      <%= f.collection_check_boxes(:category_name_ids, CategoryName.all, :id, :name) do |category| %> 
+        <%= category.label class: 'category_container__category_item_label' do %>
+          <%= category.check_box %>
+          <%= category.text %>
+        <% end %>
       <% end %>
-    <% end %>
     
-    <%= f.submit '登録'%>
+    </div>
+  </div>
+
+  <div class='category_container'>
+    <div class='thread_list_container__item'>
+      <%= f.submit '登録'%>
+    </div>
   </div>
 <% end %>

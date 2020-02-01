@@ -1,9 +1,1 @@
-<% breadcrumb :thread_list %>
-<% @thread_list.each do |thread| %>
-  <div>
-    <%= link_to thread_list_path(id: thread.uid) do %>
-      <%= thread.title %>
-      <%= thread.body %>
-    <% end %>
-  </div>
-<% end %>
+<%= render 'shared/thread_list_container' %> 

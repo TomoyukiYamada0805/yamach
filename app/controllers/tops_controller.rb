@@ -2,7 +2,7 @@ class TopsController < ApplicationController
   def index
     @categories = Category.includes([:category_name])
     @q = ThreadList.left_outer_joins(:category_name).left_outer_joins(:response).ransack(params[:q])
-    @thread_lists = @q.result(distinct: true)
+    @thread_lists = @q.result(distinct: true).limit(5)
   end
 
   def search
