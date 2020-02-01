@@ -13,7 +13,7 @@
     <p class='category_label'>カテゴリ一覧</p>
     
     <% @categories.each do |category| %>
-      <p class='category_container__category_item_label'><%= link_to category.category_name.name , categories_show_path(id: category.category_name.uid) %></p>
+      <p class='category_container__category_item_label'><%= link_to category.name , categories_show_path(id: category.uid) %></p>
     <% end %>
   </div>
 </div>

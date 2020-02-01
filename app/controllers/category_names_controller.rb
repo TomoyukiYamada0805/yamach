@@ -8,7 +8,7 @@ class CategoryNamesController < ApplicationController
     def create
        category_name = CategoryName.create(category_name_params)
   
-       redirect_to categories_index_path
+       redirect_to root_path
     end
 
     private
@@ -18,6 +18,6 @@ class CategoryNamesController < ApplicationController
       end
 
       def administer?
-        redirect_to root_path if current_user.authority != 1
+        redirect_to root_path if current_user.authority.to_i != 1
       end
 end
