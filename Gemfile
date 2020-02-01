@@ -35,6 +35,10 @@ gem 'gretel', '~> 3.0', '>= 3.0.9'
 gem 'rubocop', '~> 0.79.0'
 gem 'rubocop-rails', '~> 2.4', '>= 2.4.2'
 
+group :production, :staging do
+    gem 'unicorn'
+end
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
