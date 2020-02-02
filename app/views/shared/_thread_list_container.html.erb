@@ -7,7 +7,7 @@
       </p>
     
       <p class='thread_container__thread_item_category'>
-        <%= thread.category_name.first.name %>
+        <%= thread.category_name.first.name if thread.category_name.first.present? %>
       </p>
       <% end %>
     </div>

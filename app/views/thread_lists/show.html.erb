@@ -15,19 +15,28 @@
   </div>
 <% end %>
   
-<div class='thread_list_container'>
-  <div class='thread_list_container__item'>
     <% if user_signed_in?%>
-      <%= form_with(model: [@thread, @comment], local: true) do |f| %>
-        <div>
-          <%= f.text_area :comment, class: 'thread_comment_area' %>
+      <%= form_with model: [@thread, @comment], data: {remote: false} do |f| %>
+        <%= render 'shared/error_messages', model: f.object %>
+        <div class='thread_list_container'>
+          <div class='thread_list_container__item'>
+            <%= f.text_area :comment, class: 'thread_comment_area' %>
+          </div>
+
         </div>
-        <div class='thread_comment_submit_button_area'>
-          <%= f.submit '登録'%>
+
+        <div class='thread_list_container'>
+          <div class='thread_list_container__item'>
+            <div class='thread_comment_submit_button_area'>
+              <%= f.submit '登録'%>
+            </div>
+          </div>
         </div>
       <% end %>
     <% else %>
-      <p>ログイン後コメントすることができます</p>
+      <div class='thread_list_container'>
+        <div class='thread_list_container__item'> 
+          <p>ログイン後コメントすることができます</p>
+        </div>
+      </div>
     <% end %>
-  </div>
-</div>

@@ -6,6 +6,8 @@ class User < ApplicationRecord
 
   has_many :responses, dependent: :destroy
 
+  validates :username, presence: true, length: { maximum: 10 }
+
   before_create :generate_token
 
   def generate_token

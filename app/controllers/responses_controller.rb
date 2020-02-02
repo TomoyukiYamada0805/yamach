@@ -1,12 +1,15 @@
 class ResponsesController < ApplicationController
 
     def create
-      thread = ThreadList.find_by(id: params[:thread_list_id])
-      response = thread.response.build(response_params)
-      response.user_id = current_user.id
+      @thread = ThreadList.find_by(id: params[:thread_list_id])
+      @responses = Response.includes([:user]).where(thread_list_id: @thread.id)
+      @comment = @thread.response.build(response_params)
+      @comment.user_id = current_user.id
 
-      if response.save
+      if @comment.save
         redirect_back(fallback_location: root_path)
+      else
+        render 'thread_lists/show'
       end
     end
 

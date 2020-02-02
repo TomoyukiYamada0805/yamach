@@ -6,3 +6,11 @@ ja:
         previous: '前'
         next: '次'
         truncate: '...'
+  
+  activerecord:
+    attributes:
+      category_name:
+        name: カテゴリ名
+      thread_list:
+        title: タイトル
+        body: 本文

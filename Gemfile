@@ -35,6 +35,7 @@ gem 'gretel', '~> 3.0', '>= 3.0.9'
 gem 'rubocop', '~> 0.79.0'
 gem 'rubocop-rails', '~> 2.4', '>= 2.4.2'
 gem 'kaminari', '~> 1.2'
+gem 'rails-i18n'
 
 group :production, :staging do
     gem 'unicorn'

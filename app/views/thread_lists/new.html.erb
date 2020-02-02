@@ -4,7 +4,9 @@
   </div>
 </div>
 
-<%= form_with model: @thread_list do |f| %>
+<%= form_with model: @thread_list, data: {remote: false} do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+
   <div class='thread_list_container'>
     <div class='thread_list_container__item'>
       <%= f.text_field :title, placeholder: 'タイトル', class: 'title_submit_area'%>

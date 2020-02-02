@@ -17,9 +17,13 @@ class ThreadListsController < ApplicationController
     end
   
     def create
-       thread_list = ThreadList.create(thread_params)
-  
-       redirect_to action: 'index'
+       @thread_list = ThreadList.new(thread_params)
+
+       if @thread_list.save
+        redirect_to action: 'index'
+       else
+        render 'new'
+       end
     end
   
     private
