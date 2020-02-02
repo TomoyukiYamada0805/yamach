@@ -17,6 +17,9 @@
         </a>
         <div class="header-button">
           <% if user_signed_in? %>
+            <% if current_user.authority.to_i == 1 %>
+             <%= link_to 'カテゴリを作成', new_category_name_path %>
+            <% end %>
             <%= link_to 'スレッドを立てる', new_thread_list_path %>
             <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
           <% else %>

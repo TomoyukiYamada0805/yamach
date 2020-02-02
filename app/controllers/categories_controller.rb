@@ -3,6 +3,7 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    @thread_lists = CategoryName.left_outer_joins(:thread_list).find_by(uid: params[:id]).thread_list
+    @category_name = CategoryName.left_outer_joins(:thread_list).find_by(uid: params[:id])
+    @thread_lists = @category_name.thread_list.page(params[:page]).per(3)
   end
 end

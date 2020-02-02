@@ -1,6 +1,9 @@
-<%= link_to "戻る", root_path %>
-
 <%= render 'search_form' %>
 
 <%= render 'shared/thread_list_container' %>
-<%= paginate @thread_lists %>
+
+<div class='thread_container'>
+  <div class='thread_container__thread_pagenate'>
+    <%= paginate @thread_lists %>
+  </div>
+</div>
