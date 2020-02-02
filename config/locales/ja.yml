@@ -14,3 +14,5 @@ ja:
       thread_list:
         title: タイトル
         body: 本文
+      response:
+        comment: コメント
