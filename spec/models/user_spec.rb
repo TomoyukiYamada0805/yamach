@@ -1,5 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it "ユーザー名が必須であること" do
+    user = User.new()
+    user.valid?
+    expect(user.errors[:username]).to include('が入力されていません。')
+  end
 end
