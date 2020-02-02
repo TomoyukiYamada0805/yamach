@@ -3,5 +3,5 @@ class Response < ApplicationRecord
   validates :comment, presence: true
   belongs_to :user
 
-  validates :comment, presence: true, length: { maximum: 1000 }
+  validates :comment, presence: true, length: { maximum: 200 }
 end

@@ -5,7 +5,7 @@ class ThreadList < ApplicationRecord
     has_many :response, dependent: :destroy
 
     validates :title, presence: true, length: { maximum: 50 }
-    validates :body, presence: true, length: { maximum: 1000 }
+    validates :body, presence: true, length: { maximum: 200 }
 
     before_create :generate_token
 

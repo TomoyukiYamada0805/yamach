@@ -9,13 +9,13 @@
 
   <div class='thread_list_container'>
     <div class='thread_list_container__item'>
-      <%= f.text_field :title, placeholder: 'タイトル', class: 'title_submit_area'%>
+      <%= f.text_field :title, placeholder: 'タイトル (30文字以内で入力してください)', class: 'title_submit_area'%>
     </div>
   </div>
 
   <div class='thread_list_container'>
     <div class='thread_list_container__item'>
-      <%= f.text_area :body, class: 'body_submit_area' %>
+      <%= f.text_area :body, class: 'body_submit_area', placeholder: '本文 (500文字以内で入力してください)' %>
     </div>
   </div>
 
@@ -33,7 +33,7 @@
   </div>
 
   <div class='category_container'>
-    <div class='thread_list_container__item'>
+    <div class='width_60 text_align_right'>
       <%= f.submit '登録'%>
     </div>
   </div>

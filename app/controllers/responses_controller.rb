@@ -7,7 +7,7 @@ class ResponsesController < ApplicationController
       @comment.user_id = current_user.id
 
       if @comment.save
-        redirect_back(fallback_location: root_path)
+        redirect_to thread_list_path(id: @thread.uid)
       else
         render 'thread_lists/show'
       end

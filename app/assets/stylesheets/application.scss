@@ -43,7 +43,7 @@
       }
 
       .header-button {
-         width: 600px;
+         width: 800px;
          height: 50px;
          display: flex;
          align-items: center;
@@ -84,6 +84,14 @@
   a {
     text-decoration: none;
   }
+
+  .text_align_right {
+    text-align: right;
+  }
+
+  .width_60 {
+    width: 60%;
+  }
 }
 
 .thread_list_search {
@@ -120,11 +128,19 @@
     .thread_container__thread_item_title {
       font-size: 29px;
       margin: 0;
+      padding: 10px
     }
 
     .thread_container__thread_item_category {
       text-align: right;
       margin: 0;
+      padding: 10px;
+    }
+
+    .thread_container__thread_item_date {
+      text-align: right;
+      margin: 0;
+      padding: 0 10px 10px;
     }
   }
 

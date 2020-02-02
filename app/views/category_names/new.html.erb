@@ -4,8 +4,11 @@
     <div class='thread_list_container__item'>
       <h2>カテゴリを作成</h2>
       <%= f.text_field :name, placeholder: 'カテゴリー名', class: 'title_submit_area'%>
-      
-      <%= f.submit '登録'%>
+    </div>
+  </div>
+  <div class='thread_list_container'>
+    <div class='thread_list_container__item text_align_right'>
+      <%= f.submit '登録'%> 
     </div>
   </div>
 <% end %>

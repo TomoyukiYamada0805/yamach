@@ -2,41 +2,42 @@
   <div class='thread_list_container__item thread_info'>
     <p class='thread_list_container__item_title'><%= @thread.title %></p>
     <p class='thread_list_container__item_body'><%= @thread.body %></p>
+    <p class='reply_date'><%= @thread.created_at.strftime("%Y-%m-%d %H:%M") %></p>
   </div>
 </div>
 
 <% @responses.each do |response| %>
   <div class='thread_list_container'>
     <div class='thread_list_container__item thread_reply'>
-      <p><%= response.user.username %></p>
-      <p><%= response.comment %></p>
-      <p>ID: <%= response.user.uid %></p>
+      <h4 class='reply_username'><%= response.user.username %></h4>
+      <p class='reply_comment'><%= response.comment %></p>
+      <p class='reply_date'><%= response.created_at.strftime("%Y-%m-%d %H:%M") %></p>
     </div>
   </div>
 <% end %>
   
-    <% if user_signed_in?%>
-      <%= form_with model: [@thread, @comment], data: {remote: false} do |f| %>
-        <%= render 'shared/error_messages', model: f.object %>
-        <div class='thread_list_container'>
-          <div class='thread_list_container__item'>
-            <%= f.text_area :comment, class: 'thread_comment_area' %>
-          </div>
+<% if user_signed_in?%>
+  <%= form_with model: [@thread, @comment], data: {remote: false} do |f| %>
+    <%= render 'shared/error_messages', model: f.object %>
+    <div class='thread_list_container'>
+      <div class='thread_list_container__item'>
+        <%= f.text_area :comment, class: 'thread_comment_area', placeholder: '200文字以内で入力してください' %>
+      </div>
 
-        </div>
+    </div>
 
-        <div class='thread_list_container'>
-          <div class='thread_list_container__item'>
-            <div class='thread_comment_submit_button_area'>
-              <%= f.submit '登録'%>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <div class='thread_list_container'>
-        <div class='thread_list_container__item'> 
-          <p>ログイン後コメントすることができます</p>
+    <div class='thread_list_container'>
+      <div class='thread_list_container__item'>
+        <div class='thread_comment_submit_button_area'>
+          <%= f.submit '登録'%>
         </div>
       </div>
-    <% end %>
+    </div>
+  <% end %>
+<% else %>
+  <div class='thread_list_container'>
+    <div class='thread_list_container__item'> 
+      <p>ログイン後コメントすることができます</p>
+    </div>
+  </div>
+<% end %>
