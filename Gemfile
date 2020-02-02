@@ -38,7 +38,7 @@ gem 'kaminari', '~> 1.2'
 gem 'rails-i18n'
 
 group :production, :staging do
-    gem 'unicorn'
+  gem 'unicorn'
 end
 
 group :development, :test do
