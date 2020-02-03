@@ -5,6 +5,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :responses, dependent: :destroy
+  has_many :thread_lists, dependent: :destroy
 
   validates :username, presence: true, length: { maximum: 10 }
 

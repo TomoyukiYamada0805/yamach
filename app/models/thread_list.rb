@@ -3,6 +3,7 @@ class ThreadList < ApplicationRecord
     has_many :category_name, through: :category
     accepts_nested_attributes_for :category
     has_many :response, dependent: :destroy
+    belongs_to :user
 
     validates :title, presence: true, length: { maximum: 50 }
     validates :body, presence: true, length: { maximum: 200 }

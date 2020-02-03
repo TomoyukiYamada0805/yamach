@@ -18,6 +18,7 @@ class ThreadListsController < ApplicationController
   
     def create
        @thread_list = ThreadList.new(thread_params)
+       @thread_list.user_id = current_user.id
 
        if @thread_list.save
         redirect_to action: 'index'

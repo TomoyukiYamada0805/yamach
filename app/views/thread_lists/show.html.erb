@@ -1,5 +1,6 @@
 <div class='thread_list_container'>
   <div class='thread_list_container__item thread_info'>
+    <h4 class='thread_list_container__item_username'><%= @thread.user.username %></h4>
     <p class='thread_list_container__item_title'><%= @thread.title %></p>
     <p class='thread_list_container__item_body'><%= @thread.body %></p>
     <p class='reply_date'><%= @thread.created_at.strftime("%Y-%m-%d %H:%M") %></p>

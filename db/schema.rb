@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_01_31_021045) do
+ActiveRecord::Schema.define(version: 2020_02_03_052959) do
 
   create_table "categories", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "thread_list_id", null: false
@@ -43,6 +43,8 @@ ActiveRecord::Schema.define(version: 2020_01_31_021045) do
     t.string "body", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_thread_lists_on_user_id"
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -63,4 +65,5 @@ ActiveRecord::Schema.define(version: 2020_01_31_021045) do
   add_foreign_key "categories", "thread_lists"
   add_foreign_key "responses", "thread_lists"
   add_foreign_key "responses", "users"
+  add_foreign_key "thread_lists", "users"
 end
