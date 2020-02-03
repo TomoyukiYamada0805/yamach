@@ -15,6 +15,6 @@ RSpec.describe ThreadList, type: :model do
       )
     thread_list.valid?
     expect(thread_list.errors[:title]).to include('は50文字以内で入力してください')
-    expect(thread_list.errors[:body]).to include('は1000文字以内で入力してください')
+    expect(thread_list.errors[:body]).to include('は200文字以内で入力してください')
   end
 end

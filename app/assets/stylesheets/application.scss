@@ -14,6 +14,34 @@
  *= require_self
  */
 
+ .thema_color {
+  color: #FEC317;
+ }
+
+ .submit_button {
+  background-color: #FEC317;
+  border-color: #FEC317;
+  color: #fff;
+  border-radius: 5px;
+  font-size: 17px;
+ }
+
+ .user_form {
+  margin: 0 auto;
+  width: 800px;
+
+  #user_email, #user_password, #user_username, #user_password_confirmation {
+    width: 60%;
+    line-height: 25px;
+  }
+
+  .actions {
+    width: 60%;
+    text-align: right;
+    margin-top: 15px;
+  }
+ }
+
  #site-header {
   left: 0;
   position: fixed;
@@ -22,7 +50,7 @@
   height: 50px;
   z-index: 100;
   background: #fff;
-  box-shadow: 0 1px 1px #333333;
+  box-shadow: 0 0px 1px #333333;
 
   .site-header-content{
       max-width: 1300px;
@@ -38,7 +66,6 @@
           margin: 0px;
           width: 100%;
           height: 50px;
-          font-family: 'Noto Sans SC', sans-serif;
         }
       }
 
@@ -85,6 +112,15 @@
     text-decoration: none;
   }
 
+  .warning {
+    border-color: #DC143C;
+    color: #DC143C;
+  }
+
+  .non_margin {
+    margin: 0;
+  }
+
   .text_align_right {
     text-align: right;
   }
@@ -125,10 +161,15 @@
     border-radius: 5px;
     width: 60%;
 
+    .thread_container__thread_item_username {
+      padding: 10px;
+      margin: 0;
+    }
+
     .thread_container__thread_item_title {
       font-size: 29px;
       margin: 0;
-      padding: 10px
+      padding: 10px;
     }
 
     .thread_container__thread_item_category {

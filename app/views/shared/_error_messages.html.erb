@@ -1,6 +1,6 @@
 <% if model.errors.any? %>
-  <div class='thread_container' >
-    <div class='thread_container__thread_item'>
+  <div class='thread_container'>
+    <div class='thread_container__thread_item warning'>
       <div class="alert alert-warning">
         <ul>
           <% model.errors.full_messages.each do |message| %>

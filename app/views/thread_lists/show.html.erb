@@ -1,16 +1,22 @@
 <div class='thread_list_container'>
-  <div class='thread_list_container__item thread_info'>
-    <h4 class='thread_list_container__item_username'><%= @thread.user.username %></h4>
+  <div class='thread_list_container__item thread_info thema_border_color'>
+    <h4 class='thread_list_container__item_username'>ユーザー名: <%= @thread.user.username %></h4>
     <p class='thread_list_container__item_title'><%= @thread.title %></p>
     <p class='thread_list_container__item_body'><%= @thread.body %></p>
     <p class='reply_date'><%= @thread.created_at.strftime("%Y-%m-%d %H:%M") %></p>
   </div>
 </div>
 
+<div class='thread_container'>
+  <div class='thread_container__thread_label'>
+    <p class='non_margin'>コメント</p>
+  </div>
+</div>
+
 <% @responses.each do |response| %>
   <div class='thread_list_container'>
     <div class='thread_list_container__item thread_reply'>
-      <h4 class='reply_username'><%= response.user.username %></h4>
+      <h4 class='reply_username'>ユーザー名: <%= response.user.username %></h4>
       <p class='reply_comment'><%= response.comment %></p>
       <p class='reply_date'><%= response.created_at.strftime("%Y-%m-%d %H:%M") %></p>
     </div>
@@ -30,7 +36,7 @@
     <div class='thread_list_container'>
       <div class='thread_list_container__item'>
         <div class='thread_comment_submit_button_area'>
-          <%= f.submit '登録'%>
+          <%= f.submit '登録', class: 'submit_button'%>
         </div>
       </div>
     </div>
