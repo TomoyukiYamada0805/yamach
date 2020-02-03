@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe ThreadList, type: :model do
   it "タイトルと本文は必須であること" do
-    thread_list = ThreadList.new()
+    thread_list = ThreadList.new
     thread_list.valid?
     expect(thread_list.errors[:title]).to include('を入力してください')
     expect(thread_list.errors[:body]).to include('を入力してください')
@@ -12,7 +12,7 @@ RSpec.describe ThreadList, type: :model do
     thread_list = ThreadList.new(
       title: 'a' * 51,
       body: 'a' * 1001
-      )
+    )
     thread_list.valid?
     expect(thread_list.errors[:title]).to include('は50文字以内で入力してください')
     expect(thread_list.errors[:body]).to include('は200文字以内で入力してください')

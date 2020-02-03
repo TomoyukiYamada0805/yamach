@@ -17,6 +17,7 @@ AllCops:
     - 'script/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
     - 'node_modules/**/*'
+    - 'spec/**/*'
 
 # 日本語でのコメントを許可
 AsciiComments:
